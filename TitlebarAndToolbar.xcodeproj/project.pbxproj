@@ -475,6 +475,7 @@
 				AEE69DA51CA39F170061467C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEE69DA61CA39F170061467C /* Build configuration list for PBXNativeTarget "TitlebarAndToolbarTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				AEE69DA81CA39F170061467C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEE69DA91CA39F170061467C /* Build configuration list for PBXNativeTarget "TitlebarAndToolbarUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +493,7 @@
 				AEE69DAB1CA39F170061467C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

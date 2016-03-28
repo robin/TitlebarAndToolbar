@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AEE69D7D1CA39F170061467C"
+               BuildableName = "TitlebarAndToolbar.app"
+               BlueprintName = "TitlebarAndToolbar"
+               ReferencedContainer = "container:TitlebarAndToolbar.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AEE69D8E1CA39F170061467C"
+               BuildableName = "TitlebarAndToolbarTests.xctest"
+               BlueprintName = "TitlebarAndToolbarTests"
+               ReferencedContainer = "container:TitlebarAndToolbar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AEE69D991CA39F170061467C"
+               BuildableName = "TitlebarAndToolbarUITests.xctest"
+               BlueprintName = "TitlebarAndToolbarUITests"
+               ReferencedContainer = "container:TitlebarAndToolbar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AEE69D7D1CA39F170061467C"
+            BuildableName = "TitlebarAndToolbar.app"
+            BlueprintName = "TitlebarAndToolbar"
+            ReferencedContainer = "container:TitlebarAndToolbar.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AEE69D7D1CA39F170061467C"
+            BuildableName = "TitlebarAndToolbar.app"
+            BlueprintName = "TitlebarAndToolbar"
+            ReferencedContainer = "container:TitlebarAndToolbar.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AEE69D7D1CA39F170061467C"
+            BuildableName = "TitlebarAndToolbar.app"
+            BlueprintName = "TitlebarAndToolbar"
+            ReferencedContainer = "container:TitlebarAndToolbar.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
