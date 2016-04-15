@@ -41,7 +41,7 @@ window.titlebarAppearsTransparent = true
 You may want to hide the title and use full size content view to get the following style.
 ```swift
 window.titlebarAppearsTransparent = true
-window.titleVisibility = .Visible
+window.titleVisibility = .Hidden
 window.styleMask |= NSFullSizeContentViewWindowMask
 ```
 ![transparent titlebar](./images/transparent_title.png)
