@@ -502,8 +502,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7z-Pf-rCk">
-                                <rect key="frame" x="20" y="104" width="191" height="146"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7z-Pf-rCk">
+                                <rect key="frame" x="20" y="104" width="194" height="146"/>
                                 <subviews>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="A8g-F4-Etu">
                                         <rect key="frame" x="-2" y="130" width="171" height="18"/>
@@ -511,13 +511,22 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <binding destination="47q-Rl-7hn" name="value" keyPath="values.unifiedTitleAndToolbar" id="wf5-Bd-J6i"/>
+                                        </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="UPB-GL-dqS">
-                                        <rect key="frame" x="-2" y="108" width="195" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Titlebar appears transparent" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hFE-MI-7U7">
+                                        <rect key="frame" x="-2" y="108" width="198" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Title bar appears transparent" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hFE-MI-7U7">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <binding destination="47q-Rl-7hn" name="value" keyPath="values.transparentTitleBar" id="sPi-JY-7Oq"/>
+                                            </connections>
                                         </buttonCell>
+                                        <connections>
+                                            <binding destination="47q-Rl-7hn" name="value" keyPath="values.transparentTitleBar" id="EbU-6j-OSM"/>
+                                        </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="zVP-sM-BjM">
                                         <rect key="frame" x="-2" y="86" width="103" height="18"/>
@@ -525,6 +534,9 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <binding destination="47q-Rl-7hn" name="value" keyPath="values.titleVisibility" id="A0e-41-OrW"/>
+                                        </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="Jin-f7-VeQ">
                                         <rect key="frame" x="-2" y="64" width="72" height="18"/>
@@ -532,6 +544,9 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <binding destination="47q-Rl-7hn" name="value" keyPath="values.titleBar" id="5Ks-su-MY9"/>
+                                        </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="4Q6-g6-HWa">
                                         <rect key="frame" x="-2" y="42" width="152" height="18"/>
@@ -539,13 +554,19 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <binding destination="47q-Rl-7hn" name="value" keyPath="values.fullSizeContentView" id="LvN-hO-zK2"/>
+                                        </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="jI5-tE-lHW">
-                                        <rect key="frame" x="-2" y="20" width="97" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Hide toolbar" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mU9-e6-ghS">
+                                        <rect key="frame" x="-2" y="20" width="102" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Show toolbar" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mU9-e6-ghS">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <binding destination="47q-Rl-7hn" name="value" keyPath="values.showToolbar" id="0b3-Pd-Ehu"/>
+                                        </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="2Tz-Ze-Gjq">
                                         <rect key="frame" x="-2" y="-2" width="171" height="18"/>
@@ -555,6 +576,7 @@
                                         </buttonCell>
                                         <connections>
                                             <action selector="titleAccessoryChecked:" target="LrX-tr-nbp" id="Sva-Ey-cW5"/>
+                                            <binding destination="47q-Rl-7hn" name="value" keyPath="values.hasTitleAccessoryView" id="kl1-kZ-699"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -628,7 +650,7 @@
                     </view>
                     <connections>
                         <outlet property="fullContentViewCheckbox" destination="4Q6-g6-HWa" id="DV9-g5-kEA"/>
-                        <outlet property="hideToolbarCheckbox" destination="jI5-tE-lHW" id="l3G-EP-HO1"/>
+                        <outlet property="showToolbarCheckbox" destination="jI5-tE-lHW" id="SaY-lS-Zrd"/>
                         <outlet property="titleAccessoryViewCheckbox" destination="2Tz-Ze-Gjq" id="QJ4-kV-P2m"/>
                         <outlet property="titleAccessoryViewLayoutMatrix" destination="lYi-KY-G2F" id="WkC-wb-9Pu"/>
                         <outlet property="titleAppearsTransparentCheckbox" destination="UPB-GL-dqS" id="uBS-Ry-wvs"/>
@@ -638,6 +660,7 @@
                     </connections>
                 </viewController>
                 <customObject id="ti0-wK-tfk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="47q-Rl-7hn"/>
             </objects>
             <point key="canvasLocation" x="651" y="741"/>
         </scene>

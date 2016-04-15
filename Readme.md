@@ -11,8 +11,8 @@ By default, the title of window is visible.
 window.titleVisibility = .Visible
 ```
 
-A window with a toolbar while the title is set to invisible:
 ![window with title invisible](./images/title_hidden_window.png)
+This is a window with a toolbar while the title set to invisible:
 
 ```swift
 window.titleVisibility = .Hidden
@@ -32,7 +32,7 @@ When title is invisible:
 ![full size content view without title](./images/full_size_content_without_title.png)
 Example applications: Safari, Photos, Wunderlist
 
-## Transparent titlebar
+## Transparent title bar
 If you want to hide the title bar but still need the window buttons (such as close button, minimize button and screen button), you can set the titlebar to transparent:
 ```swift
 window.titlebarAppearsTransparent = true
@@ -70,3 +70,6 @@ One thing to remember. **You have to set the layout attribute before add the acc
 
 ## Unified title and toolbar
 Looks like this has been deprecated. No matter what you set, the title bar and toolbar are unified since Yosemite.
+
+## Author
+[Lu Yibin](http://robin.github.io)

@@ -16,7 +16,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBOutlet weak var fullContentViewCheckbox: NSButton!
     @IBOutlet weak var titleAccessoryViewCheckbox: NSButton!
     @IBOutlet weak var titleAccessoryViewLayoutMatrix: NSMatrix!
-    @IBOutlet weak var hideToolbarCheckbox: NSButton!
+    @IBOutlet weak var showToolbarCheckbox: NSButton!
     @IBOutlet weak var titleBarCheckBox: NSButton!
     
     var windowControllers = [NSWindowController]()
@@ -73,7 +73,7 @@ class ViewController: NSViewController, NSWindowDelegate {
                 } else {
                     window.styleMask = window.styleMask & (~NSTitledWindowMask)
                 }
-                window.toolbar?.visible = hideToolbarCheckbox.state == NSOffState
+                window.toolbar?.visible = showToolbarCheckbox.state == NSOnState
 
                 showWindowWithTitle(controller, title: "Window")
 
