@@ -1,0 +1,35 @@
+//
+//  SampleViewController.swift
+//  TitlebarAndToolbar
+//
+//  Created by Lu Yibin on 16/6/21.
+//  Copyright © 2016年 Lu Yibin. All rights reserved.
+//
+
+import Cocoa
+
+class SampleViewController: NSViewController {
+
+    @IBOutlet weak var textField: NSTextField!
+    @IBOutlet weak var textField2: NSTextField!
+    @IBOutlet weak var scrollView: NSScrollView!
+    
+    var topConstraint : NSLayoutConstraint?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do view setup here.
+        textField.stringValue = "aligned to window.topAnchor"
+    }
+    
+    override func updateViewConstraints() {
+        if topConstraint == nil {
+            if let topAnchor = self.view.window?.contentLayoutGuide?.topAnchor {
+                topConstraint = self.textField.topAnchor.constraintEqualToAnchor(topAnchor, constant: 20)
+                topConstraint?.active = true
+            }
+        }
+        super.updateViewConstraints()
+    }
+}

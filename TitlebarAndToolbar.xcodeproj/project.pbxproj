@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEA565561D18EF1900896DC2 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA565551D18EF1900896DC2 /* SampleViewController.swift */; };
 		AEE69D821CA39F170061467C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE69D811CA39F170061467C /* AppDelegate.swift */; };
 		AEE69D841CA39F170061467C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE69D831CA39F170061467C /* ViewController.swift */; };
 		AEE69D861CA39F170061467C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEE69D851CA39F170061467C /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AEA565551D18EF1900896DC2 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		AEE69D7E1CA39F170061467C /* TitlebarAndToolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TitlebarAndToolbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE69D811CA39F170061467C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEE69D831CA39F170061467C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				AEE69D831CA39F170061467C /* ViewController.swift */,
 				AEE69D851CA39F170061467C /* Assets.xcassets */,
 				AEE69D871CA39F170061467C /* Main.storyboard */,
+				AEA565551D18EF1900896DC2 /* SampleViewController.swift */,
 				AEE69D8A1CA39F170061467C /* Info.plist */,
 			);
 			path = TitlebarAndToolbar;
@@ -254,6 +257,7 @@
 			files = (
 				AEE69D841CA39F170061467C /* ViewController.swift in Sources */,
 				AEE69D821CA39F170061467C /* AppDelegate.swift in Sources */,
+				AEA565561D18EF1900896DC2 /* SampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
