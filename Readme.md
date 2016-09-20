@@ -28,7 +28,7 @@ Example applications: Calendar, Notes, Xcode
 ## Full size content view
 When setting the NSFullSizeContentViewWindowMask, the content view extends to the whole window. The title bar and toolbar use a blur effect if visible.
 ```swift
-window.styleMask |= NSFullSizeContentViewWindowMask
+window.styleMask.insert(NSFullSizeContentViewWindowMask)
 ```
 
 When both title and toolbar are visible:
@@ -48,7 +48,7 @@ You may want to hide the title and use full size content view to get the followi
 ```swift
 window.titlebarAppearsTransparent = true
 window.titleVisibility = .Hidden
-window.styleMask |= NSFullSizeContentViewWindowMask
+window.styleMask.insert(NSFullSizeContentViewWindowMask)
 ```
 ![transparent titlebar](./images/transparent_title.png)
 Example application: Reeder, 
