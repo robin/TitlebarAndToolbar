@@ -13,6 +13,7 @@ class SampleViewController: NSViewController {
     @IBOutlet weak var textField: NSTextField!
     @IBOutlet weak var textField2: NSTextField!
     @IBOutlet weak var scrollView: NSScrollView!
+    @IBOutlet weak var imageView: NSImageView!
     
     var topConstraint : NSLayoutConstraint?
     
@@ -21,6 +22,7 @@ class SampleViewController: NSViewController {
 
         // Do view setup here.
         textField.stringValue = "aligned to window.topAnchor"
+
     }
     
     override func updateViewConstraints() {

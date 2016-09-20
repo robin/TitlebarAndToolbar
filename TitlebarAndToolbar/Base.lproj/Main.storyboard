@@ -670,33 +670,11 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="SampleViewController" customModule="TitlebarAndToolbar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="427"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="8JQ-u9-ExN">
-                                <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
-                                <clipView key="contentView" id="Qrt-tt-Ift">
-                                    <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJr-Pg-MkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" image="background" id="i8C-6R-Das"/>
-                                        </imageView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="WYL-pk-jVe">
-                                    <rect key="frame" x="0.0" y="437" width="689" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="IwH-EG-dWt">
-                                    <rect key="frame" x="673" y="0.0" width="16" height="453"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-OP-O6G">
-                                <rect key="frame" x="20" y="416" width="257" height="17"/>
+                                <rect key="frame" x="20" y="390" width="257" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="aligned to contentLayoutGuide.topAnchor" drawsBackground="YES" id="oeh-IA-zfm">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -704,33 +682,68 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-9y-ngD">
-                                <rect key="frame" x="285" y="416" width="131" height="17"/>
+                                <rect key="frame" x="285" y="390" width="131" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="aligned to topAnchor" drawsBackground="YES" id="MFI-Ph-r6J">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="CKH-Ed-1fw">
+                                <rect key="frame" x="0.0" y="0.0" width="640" height="427"/>
+                                <clipView key="contentView" id="GFT-0M-yee">
+                                    <rect key="frame" x="0.0" y="0.0" width="640" height="427"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="faP-sO-RRQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="640" height="427"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="427" id="ct9-m1-DxR"/>
+                                                <constraint firstAttribute="width" constant="640" id="q0T-IO-vgg"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" image="background" id="2Va-qN-TVc"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="faP-sO-RRQ" firstAttribute="leading" secondItem="GFT-0M-yee" secondAttribute="leading" id="0bj-yt-oSg"/>
+                                        <constraint firstItem="faP-sO-RRQ" firstAttribute="top" secondItem="GFT-0M-yee" secondAttribute="top" id="eap-Ev-VLe"/>
+                                        <constraint firstAttribute="trailing" secondItem="faP-sO-RRQ" secondAttribute="trailing" id="ed7-w0-yB9"/>
+                                        <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="faP-sO-RRQ" secondAttribute="bottom" id="oQT-i1-jn6"/>
+                                    </constraints>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="fSj-NP-Sgn">
+                                    <rect key="frame" x="0.0" y="411" width="640" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="qlW-Sd-rzC">
+                                    <rect key="frame" x="624" y="0.0" width="16" height="427"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8JQ-u9-ExN" secondAttribute="bottom" id="1Ra-Wt-Z2q"/>
                             <constraint firstItem="oCg-OP-O6G" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="73P-mC-DPD"/>
-                            <constraint firstItem="8JQ-u9-ExN" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="FIC-GS-D5W"/>
+                            <constraint firstAttribute="bottom" secondItem="CKH-Ed-1fw" secondAttribute="bottom" id="AWE-Ny-V2g"/>
+                            <constraint firstItem="CKH-Ed-1fw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="F50-Mp-ZvP"/>
+                            <constraint firstAttribute="trailing" secondItem="CKH-Ed-1fw" secondAttribute="trailing" id="GAO-3x-jMQ"/>
                             <constraint firstItem="LQO-9y-ngD" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="NHT-mn-Vl4"/>
-                            <constraint firstAttribute="trailing" secondItem="8JQ-u9-ExN" secondAttribute="trailing" id="Qed-S5-cK8"/>
                             <constraint firstItem="oCg-OP-O6G" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" placeholder="YES" id="RH5-qq-dVL"/>
+                            <constraint firstAttribute="bottom" secondItem="CKH-Ed-1fw" secondAttribute="bottom" id="SNj-Df-zrc"/>
+                            <constraint firstItem="CKH-Ed-1fw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="YlQ-BL-FQQ"/>
                             <constraint firstItem="LQO-9y-ngD" firstAttribute="leading" secondItem="oCg-OP-O6G" secondAttribute="trailing" constant="8" id="j3S-Rd-ktH"/>
-                            <constraint firstItem="8JQ-u9-ExN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="qLR-M3-tK8"/>
+                            <constraint firstItem="CKH-Ed-1fw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="oIq-eZ-Gkf"/>
+                            <constraint firstAttribute="trailing" secondItem="CKH-Ed-1fw" secondAttribute="trailing" id="vuT-86-3H9"/>
+                            <constraint firstItem="CKH-Ed-1fw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="wR3-6j-qN0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="8JQ-u9-ExN" id="Kde-Qc-Tmd"/>
                         <outlet property="textField" destination="oCg-OP-O6G" id="VCS-nd-gTc"/>
                         <outlet property="textField2" destination="LQO-9y-ngD" id="Pm7-ek-ZtP"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="75" y="901"/>
+            <point key="canvasLocation" x="74.5" y="900.5"/>
         </scene>
         <!--Titlebar Accessory View Controller-->
         <scene sceneID="Vh0-2W-Oyf">
