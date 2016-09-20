@@ -25,8 +25,8 @@ class SampleViewController: NSViewController {
     
     override func updateViewConstraints() {
         if topConstraint == nil {
-            if let topAnchor = (self.view.window?.contentLayoutGuide as AnyObject).topAnchor {
-                topConstraint = self.textField.topAnchor.constraint(equalTo: topAnchor, constant: 20)
+            if let topAnchor = (self.view.window?.contentLayoutGuide as? NSLayoutGuide)?.topAnchor {
+                topConstraint = self.textField.topAnchor.constraint(equalTo: topAnchor, constant: 0)
                 topConstraint?.isActive = true
             }
         }

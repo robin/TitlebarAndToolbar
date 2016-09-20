@@ -681,7 +681,7 @@
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJr-Pg-MkX">
                                             <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" image="background" id="i8C-6R-Das"/>
                                         </imageView>
                                     </subviews>
