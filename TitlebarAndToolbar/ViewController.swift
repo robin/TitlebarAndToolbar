@@ -31,13 +31,13 @@ class ViewController: NSViewController, NSWindowDelegate {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
 
-    func showWindowWithTitle(controller:NSWindowController, title:String) {
+    func showWindowWithTitle(_ controller:NSWindowController, title:String) {
         windowControllers.append(controller)
         controller.window?.title = title
         controller.showWindow(self)
@@ -45,56 +45,56 @@ class ViewController: NSViewController, NSWindowDelegate {
 
     func instantiateWindowController() -> NSWindowController? {
         if let storyboard = self.storyboard {
-            return storyboard.instantiateControllerWithIdentifier("windowController") as? NSWindowController
+            return storyboard.instantiateController(withIdentifier: "windowController") as? NSWindowController
         }
         return nil
     }
 
-    @IBAction func titleAccessoryChecked(sender: AnyObject) {
-        self.willChangeValueForKey("titleAccessoryViewEnabled")
-        self.didChangeValueForKey("titleAccessoryViewEnabled")
+    @IBAction func titleAccessoryChecked(_ sender: AnyObject) {
+        self.willChangeValue(forKey: "titleAccessoryViewEnabled")
+        self.didChangeValue(forKey: "titleAccessoryViewEnabled")
     }
     
-    @IBAction func launchWindow(sender: AnyObject) {
+    @IBAction func launchWindow(_ sender: AnyObject) {
         if let controller = instantiateWindowController() {
             if let window = controller.window {
                 if unifiedTitleAndToolbarCheckbox.state == NSOnState {
-                    window.styleMask |= NSUnifiedTitleAndToolbarWindowMask
+                    window.styleMask.insert(NSUnifiedTitleAndToolbarWindowMask)
                 } else {
-                    window.styleMask = window.styleMask & (~NSUnifiedTitleAndToolbarWindowMask)
+                    window.styleMask.remove(NSUnifiedTitleAndToolbarWindowMask)
                 }
                 if fullContentViewCheckbox.state == NSOnState {
-                    window.styleMask |= NSFullSizeContentViewWindowMask
+                    window.styleMask.insert(NSFullSizeContentViewWindowMask)
                 } else {
-                    window.styleMask = window.styleMask & (~NSFullSizeContentViewWindowMask)
+                    window.styleMask.remove(NSFullSizeContentViewWindowMask)
                 }
                 if titleBarCheckBox.state == NSOnState {
-                    window.styleMask |= NSTitledWindowMask
+                    window.styleMask.insert(NSTitledWindowMask)
                 } else {
-                    window.styleMask = window.styleMask & (~NSTitledWindowMask)
+                    window.styleMask.remove(NSTitledWindowMask)
                 }
-                window.toolbar?.visible = showToolbarCheckbox.state == NSOnState
+                window.toolbar?.isVisible = showToolbarCheckbox.state == NSOnState
 
                 showWindowWithTitle(controller, title: "Window")
 
                 if titleAccessoryViewEnabled {
-                    if let titlebarController = self.storyboard?.instantiateControllerWithIdentifier("titlebarViewController") as? NSTitlebarAccessoryViewController {
+                    if let titlebarController = self.storyboard?.instantiateController(withIdentifier: "titlebarViewController") as? NSTitlebarAccessoryViewController {
                         switch self.titleAccessoryViewLayoutMatrix.selectedRow {
                         case 0:
-                            titlebarController.layoutAttribute = .Bottom
+                            titlebarController.layoutAttribute = .bottom
                         case 1:
-                            titlebarController.layoutAttribute = .Left
+                            titlebarController.layoutAttribute = .left
                         case 2:
-                            titlebarController.layoutAttribute = .Right
+                            titlebarController.layoutAttribute = .right
                         default:
-                            titlebarController.layoutAttribute = .Bottom
+                            titlebarController.layoutAttribute = .bottom
                         }
                         
                         // layoutAttribute has to be set before added to window
                         window.addTitlebarAccessoryViewController(titlebarController)
                     }
                 }
-                window.titleVisibility = titleVisibilityCheckbox.state == NSOffState ? .Hidden : .Visible
+                window.titleVisibility = titleVisibilityCheckbox.state == NSOffState ? .hidden : .visible
                 window.titlebarAppearsTransparent = titleAppearsTransparentCheckbox.state == NSOnState
             }
         }

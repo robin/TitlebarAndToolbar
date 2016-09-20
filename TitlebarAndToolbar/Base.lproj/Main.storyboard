@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="pwa-Cc-dRm">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="pwa-Cc-dRm">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -670,32 +670,33 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="SampleViewController" customModule="TitlebarAndToolbar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JQ-u9-ExN">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="8JQ-u9-ExN">
+                                <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
                                 <clipView key="contentView" id="Qrt-tt-Ift">
-                                    <rect key="frame" x="0.0" y="0.0" width="465" height="255"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJr-Pg-MkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="1280" height="854"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="689" height="453"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" image="background" id="i8C-6R-Das"/>
                                         </imageView>
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="WYL-pk-jVe">
-                                    <rect key="frame" x="0.0" y="255" width="465" height="15"/>
+                                    <rect key="frame" x="0.0" y="437" width="689" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="IwH-EG-dWt">
-                                    <rect key="frame" x="465" y="0.0" width="15" height="255"/>
+                                    <rect key="frame" x="673" y="0.0" width="16" height="453"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-OP-O6G">
-                                <rect key="frame" x="20" y="233" width="257" height="17"/>
+                                <rect key="frame" x="20" y="416" width="257" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="aligned to contentLayoutGuide.topAnchor" drawsBackground="YES" id="oeh-IA-zfm">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -703,7 +704,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-9y-ngD">
-                                <rect key="frame" x="285" y="233" width="131" height="17"/>
+                                <rect key="frame" x="285" y="416" width="131" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="aligned to topAnchor" drawsBackground="YES" id="MFI-Ph-r6J">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -729,7 +730,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="74" y="812"/>
+            <point key="canvasLocation" x="75" y="901"/>
         </scene>
         <!--Titlebar Accessory View Controller-->
         <scene sceneID="Vh0-2W-Oyf">
