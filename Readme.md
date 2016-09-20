@@ -1,7 +1,7 @@
 # Title bar and Toolbar of NSWindow examples
 This is a showcase for several combinations of styles of title bar and toolbar of NSWindow.
 
-![main window](./images/mainwindow.png | width=564)
+<img src=“./images/mainwindow.png” title=“main window” width=“564”>
 
 ## Title visibility
 By default, the title of window is visible.
