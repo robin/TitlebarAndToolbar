@@ -25,6 +25,8 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBOutlet weak var showToolbarCheckbox: NSButton!
     @IBOutlet weak var titleBarCheckBox: NSButton!
     
+    @IBOutlet var codeTextView: NSTextView!
+    
     var windowControllers = [NSWindowController]()
     
     var titleAccessoryViewEnabled : Bool {
@@ -35,6 +37,8 @@ class ViewController: NSViewController, NSWindowDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.codeTextView.font = NSFont(name: "Monaco", size: 12)
+        generateCode()
     }
 
     override var representedObject: Any? {
@@ -56,9 +60,42 @@ class ViewController: NSViewController, NSWindowDelegate {
         return nil
     }
 
+    func generateCode() {
+        var code : String = ""
+        if unifiedTitleAndToolbarCheckbox.state == NSOnState {
+            code.append("window.styleMask.insert(NSUnifiedTitleAndToolbarWindowMask)\n")
+        } else {
+            code.append("window.styleMask.remove(NSUnifiedTitleAndToolbarWindowMask)\n")
+        }
+        if fullContentViewCheckbox.state == NSOnState {
+            code.append("window.styleMask.insert(NSFullSizeContentViewWindowMask)\n")
+        } else {
+            code.append("window.styleMask.remove(NSFullSizeContentViewWindowMask)\n")
+        }
+        if titleBarCheckBox.state == NSOnState {
+            code.append("window.styleMask.insert(NSTitledWindowMask)\n")
+        } else {
+            code.append("window.styleMask.remove(NSTitledWindowMask)\n")
+        }
+        let showToolbar = showToolbarCheckbox.state == NSOnState
+        code.append("window.toolbar?.isVisible = \(showToolbar)\n")
+        
+        let visibility = titleVisibilityCheckbox.state == NSOffState ? ".hidden" : ".visible"
+        code.append("window.titleVisibility = \(visibility)\n")
+        
+        let transparent = titleAppearsTransparentCheckbox.state == NSOnState
+        code.append("window.titlebarAppearsTransparent = \(transparent)\n")
+        self.codeTextView.string = code
+    }
+    
     @IBAction func titleAccessoryChecked(_ sender: AnyObject) {
         self.willChangeValue(forKey: "titleAccessoryViewEnabled")
         self.didChangeValue(forKey: "titleAccessoryViewEnabled")
+        self.attributeChanged(sender)
+    }
+    
+    @IBAction func attributeChanged(_ sender: AnyObject) {
+        generateCode()
     }
     
     @IBAction func restoreSettings(_ sender: AnyObject) {
@@ -77,6 +114,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         userDefaults.set(NSOnState, forKey: "titleVisibility")
         titleAppearsTransparentCheckbox.state = NSOffState
         userDefaults.set(titleAppearsTransparentCheckbox.state, forKey: "transparentTitleBar")
+        generateCode()
     }
     
     @IBAction func launchWindow(_ sender: AnyObject) {
