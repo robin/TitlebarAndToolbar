@@ -413,7 +413,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="windowController" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Configure" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Configure" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -600,7 +600,7 @@
                                 </customSpacing>
                             </stackView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jFa-f7-fax">
-                                <rect key="frame" x="329" y="13" width="137" height="32"/>
+                                <rect key="frame" x="327" y="13" width="139" height="32"/>
                                 <buttonCell key="cell" type="push" title="Launch Window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ziN-4Z-NgM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -638,12 +638,25 @@
                                     <binding destination="LrX-tr-nbp" name="enabled" keyPath="self.titleAccessoryViewEnabled" id="84k-yB-Zkk"/>
                                 </connections>
                             </matrix>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LJV-CQ-sfe">
+                                <rect key="frame" x="327" y="46" width="139" height="32"/>
+                                <buttonCell key="cell" type="push" title="Restore settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YQ9-YJ-FcO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="restoreSettings:" target="LrX-tr-nbp" id="uzk-8L-jKj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="p7z-Pf-rCk" firstAttribute="top" secondItem="kaG-WO-9Uu" secondAttribute="top" constant="20" id="3jc-t0-Kk6"/>
                             <constraint firstItem="p7z-Pf-rCk" firstAttribute="leading" secondItem="kaG-WO-9Uu" secondAttribute="leading" constant="20" id="7jL-zW-PS9"/>
                             <constraint firstItem="lYi-KY-G2F" firstAttribute="top" secondItem="p7z-Pf-rCk" secondAttribute="bottom" constant="8" id="HEo-Jx-8Pm"/>
                             <constraint firstAttribute="trailing" secondItem="jFa-f7-fax" secondAttribute="trailing" constant="20" id="e3j-WX-mnU"/>
+                            <constraint firstItem="jFa-f7-fax" firstAttribute="top" secondItem="LJV-CQ-sfe" secondAttribute="bottom" constant="12" id="eg5-Av-qy1"/>
+                            <constraint firstItem="LJV-CQ-sfe" firstAttribute="width" secondItem="jFa-f7-fax" secondAttribute="width" id="kQG-37-Nfz"/>
+                            <constraint firstItem="LJV-CQ-sfe" firstAttribute="centerX" secondItem="jFa-f7-fax" secondAttribute="centerX" id="l3Z-eo-gPK"/>
                             <constraint firstItem="lYi-KY-G2F" firstAttribute="leading" secondItem="kaG-WO-9Uu" secondAttribute="leading" constant="50" id="nAV-cU-6LQ"/>
                             <constraint firstAttribute="bottom" secondItem="jFa-f7-fax" secondAttribute="bottom" constant="20" id="pQ9-7x-G7M"/>
                         </constraints>
@@ -689,7 +702,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="CKH-Ed-1fw">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="CKH-Ed-1fw">
                                 <rect key="frame" x="0.0" y="0.0" width="640" height="427"/>
                                 <clipView key="contentView" id="GFT-0M-yee">
                                     <rect key="frame" x="0.0" y="0.0" width="640" height="427"/>

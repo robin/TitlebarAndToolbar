@@ -8,6 +8,12 @@
 
 import Cocoa
 
+extension OptionSet {
+    func optionState(_ opt: Self.Element) -> Int {
+        return self.contains(opt) ? NSOnState : NSOffState
+    }
+}
+
 class ViewController: NSViewController, NSWindowDelegate {
 
     @IBOutlet weak var unifiedTitleAndToolbarCheckbox: NSButton!
@@ -53,6 +59,24 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBAction func titleAccessoryChecked(_ sender: AnyObject) {
         self.willChangeValue(forKey: "titleAccessoryViewEnabled")
         self.didChangeValue(forKey: "titleAccessoryViewEnabled")
+    }
+    
+    @IBAction func restoreSettings(_ sender: AnyObject) {
+        let userDefaults = UserDefaults.standard
+        if let defaultStyleMask = self.view.window?.styleMask {
+            unifiedTitleAndToolbarCheckbox.state = defaultStyleMask.optionState(NSUnifiedTitleAndToolbarWindowMask)
+            userDefaults.set(unifiedTitleAndToolbarCheckbox.state, forKey: "unifiedTitleAndToolbar")
+            fullContentViewCheckbox.state = defaultStyleMask.optionState(NSFullSizeContentViewWindowMask)
+            userDefaults.set(fullContentViewCheckbox.state, forKey: "fullSizeContentView")
+            titleBarCheckBox.state = defaultStyleMask.optionState(NSTitledWindowMask)
+            userDefaults.set(titleBarCheckBox.state, forKey: "titleBar")
+        }
+        self.titleAccessoryViewCheckbox.state = NSOffState
+        userDefaults.set(NSOffState, forKey: "hasTitleAccessoryView")
+        titleVisibilityCheckbox.state = NSOnState
+        userDefaults.set(NSOnState, forKey: "titleVisibility")
+        titleAppearsTransparentCheckbox.state = NSOffState
+        userDefaults.set(titleAppearsTransparentCheckbox.state, forKey: "transparentTitleBar")
     }
     
     @IBAction func launchWindow(_ sender: AnyObject) {
