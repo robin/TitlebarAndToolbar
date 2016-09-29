@@ -14,14 +14,14 @@ By default, the title of window is visible.
 ![window with title visible](./images/title_visible_window.png)
 
 ```swift
-window.titleVisibility = .Visible
+window.titleVisibility = .visible
 ```
 
 ![window with title invisible](./images/title_hidden_window.png)
 This is a window with a toolbar while the title set to invisible:
 
 ```swift
-window.titleVisibility = .Hidden
+window.titleVisibility = .hidden
 ```
 Example applications: Calendar, Notes, Xcode
 
@@ -47,7 +47,7 @@ window.titlebarAppearsTransparent = true
 You may want to hide the title and use full size content view to get the following style.
 ```swift
 window.titlebarAppearsTransparent = true
-window.titleVisibility = .Hidden
+window.titleVisibility = .hidden
 window.styleMask.insert(NSFullSizeContentViewWindowMask)
 ```
 ![transparent titlebar](./images/transparent_title.png)
