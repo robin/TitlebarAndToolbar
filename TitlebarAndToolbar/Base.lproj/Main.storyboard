@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="pwa-Cc-dRm">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="pwa-Cc-dRm">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -448,7 +449,7 @@
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="96" height="22"/>
                                     <size key="maxSize" width="96" height="22"/>
-                                    <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="dHV-R4-Q90">
+                                    <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" id="dHV-R4-Q90">
                                         <rect key="frame" x="0.0" y="14" width="96" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="5Pd-X7-0Qh">
@@ -499,14 +500,14 @@
             <objects>
                 <viewController id="LrX-tr-nbp" customClass="ViewController" customModule="TitlebarAndToolbar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="kaG-WO-9Uu">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="464"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="489"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p7z-Pf-rCk">
-                                <rect key="frame" x="20" y="298" width="194" height="146"/>
+                                <rect key="frame" x="20" y="302" width="303" height="167"/>
                                 <subviews>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="A8g-F4-Etu">
-                                        <rect key="frame" x="-2" y="130" width="171" height="18"/>
+                                        <rect key="frame" x="-2" y="151" width="171" height="18"/>
                                         <buttonCell key="cell" type="check" title="Unified Title and Toolbar" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zx5-tn-yza">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -517,7 +518,7 @@
                                         </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="UPB-GL-dqS">
-                                        <rect key="frame" x="-2" y="108" width="198" height="18"/>
+                                        <rect key="frame" x="-2" y="129" width="198" height="18"/>
                                         <buttonCell key="cell" type="check" title="Title bar appears transparent" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hFE-MI-7U7">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -530,6 +531,14 @@
                                             <binding destination="47q-Rl-7hn" name="value" keyPath="values.transparentTitleBar" id="EbU-6j-OSM"/>
                                         </connections>
                                     </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tf-DZ-11c">
+                                        <rect key="frame" x="28" y="110" width="277" height="13"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="effect only when &quot;Full size content view&quot; is also checked" id="33P-eH-X13">
+                                            <font key="font" metaFont="label"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="zVP-sM-BjM">
                                         <rect key="frame" x="-2" y="86" width="103" height="18"/>
                                         <buttonCell key="cell" type="check" title="Title Visibility" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="GsA-QE-cOv">
@@ -586,7 +595,11 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Tf-DZ-11c" firstAttribute="leading" secondItem="p7z-Pf-rCk" secondAttribute="leading" constant="30" id="onm-2f-aM9"/>
+                                </constraints>
                                 <visibilityPriorities>
+                                    <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
@@ -603,10 +616,11 @@
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
                             <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYi-KY-G2F">
-                                <rect key="frame" x="50" y="228" width="67" height="62"/>
+                                <rect key="frame" x="50" y="232" width="67" height="62"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="67" height="18"/>
                                 <size key="intercellSpacing" width="0.0" height="4"/>
@@ -636,7 +650,7 @@
                                 </connections>
                             </matrix>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jFa-f7-fax">
-                                <rect key="frame" x="327" y="221" width="139" height="32"/>
+                                <rect key="frame" x="327" y="225" width="139" height="32"/>
                                 <buttonCell key="cell" type="push" title="Launch Window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ziN-4Z-NgM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -646,7 +660,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LJV-CQ-sfe">
-                                <rect key="frame" x="327" y="254" width="139" height="32"/>
+                                <rect key="frame" x="327" y="258" width="139" height="32"/>
                                 <buttonCell key="cell" type="push" title="Restore settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YQ9-YJ-FcO">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -656,16 +670,16 @@
                                 </connections>
                             </button>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg3-Ac-nDb">
-                                <rect key="frame" x="20" y="20" width="440" height="200"/>
+                                <rect key="frame" x="20" y="20" width="440" height="204"/>
                                 <clipView key="contentView" id="kAD-YE-ark">
-                                    <rect key="frame" x="1" y="1" width="438" height="198"/>
+                                    <rect key="frame" x="1" y="1" width="438" height="202"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="aGO-T2-Y9T">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="198"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="202"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="438" height="198"/>
+                                            <size key="minSize" width="438" height="202"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -680,7 +694,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="22F-fC-a6j">
-                                    <rect key="frame" x="423" y="1" width="16" height="198"/>
+                                    <rect key="frame" x="423" y="1" width="16" height="202"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -727,7 +741,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="427"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-OP-O6G">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-OP-O6G">
                                 <rect key="frame" x="20" y="390" width="257" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="aligned to contentLayoutGuide.topAnchor" drawsBackground="YES" id="oeh-IA-zfm">
                                     <font key="font" metaFont="system"/>
@@ -735,7 +749,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-9y-ngD">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-9y-ngD">
                                 <rect key="frame" x="285" y="390" width="131" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="aligned to topAnchor" drawsBackground="YES" id="MFI-Ph-r6J">
                                     <font key="font" metaFont="system"/>
