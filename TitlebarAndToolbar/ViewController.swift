@@ -63,19 +63,19 @@ class ViewController: NSViewController, NSWindowDelegate {
     func generateCode() {
         var code : String = ""
         if unifiedTitleAndToolbarCheckbox.state == NSOnState {
-            code.append("window.styleMask.insert(NSUnifiedTitleAndToolbarWindowMask)\n")
+            code.append("window.styleMask.insert(NSWindowStyleMask.unifiedTitleAndToolbar)\n")
         } else {
-            code.append("window.styleMask.remove(NSUnifiedTitleAndToolbarWindowMask)\n")
+            code.append("window.styleMask.remove(NSWindowStyleMask.unifiedTitleAndToolbar)\n")
         }
         if fullContentViewCheckbox.state == NSOnState {
-            code.append("window.styleMask.insert(NSFullSizeContentViewWindowMask)\n")
+            code.append("window.styleMask.insert(NSWindowStyleMask.fullSizeContentView)\n")
         } else {
-            code.append("window.styleMask.remove(NSFullSizeContentViewWindowMask)\n")
+            code.append("window.styleMask.remove(NSWindowStyleMask.fullSizeContentView)\n")
         }
         if titleBarCheckBox.state == NSOnState {
-            code.append("window.styleMask.insert(NSTitledWindowMask)\n")
+            code.append("window.styleMask.insert(NSWindowStyleMask.titled)\n")
         } else {
-            code.append("window.styleMask.remove(NSTitledWindowMask)\n")
+            code.append("window.styleMask.remove(NSWindowStyleMask.titled)\n")
         }
         let showToolbar = showToolbarCheckbox.state == NSOnState
         code.append("window.toolbar?.isVisible = \(showToolbar)\n")
@@ -101,11 +101,11 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBAction func restoreSettings(_ sender: AnyObject) {
         let userDefaults = UserDefaults.standard
         if let defaultStyleMask = self.view.window?.styleMask {
-            unifiedTitleAndToolbarCheckbox.state = defaultStyleMask.optionState(NSUnifiedTitleAndToolbarWindowMask)
+            unifiedTitleAndToolbarCheckbox.state = defaultStyleMask.optionState(NSWindowStyleMask.unifiedTitleAndToolbar)
             userDefaults.set(unifiedTitleAndToolbarCheckbox.state, forKey: "unifiedTitleAndToolbar")
-            fullContentViewCheckbox.state = defaultStyleMask.optionState(NSFullSizeContentViewWindowMask)
+            fullContentViewCheckbox.state = defaultStyleMask.optionState(NSWindowStyleMask.fullSizeContentView)
             userDefaults.set(fullContentViewCheckbox.state, forKey: "fullSizeContentView")
-            titleBarCheckBox.state = defaultStyleMask.optionState(NSTitledWindowMask)
+            titleBarCheckBox.state = defaultStyleMask.optionState(NSWindowStyleMask.titled)
             userDefaults.set(titleBarCheckBox.state, forKey: "titleBar")
         }
         self.titleAccessoryViewCheckbox.state = NSOffState
@@ -121,19 +121,19 @@ class ViewController: NSViewController, NSWindowDelegate {
         if let controller = instantiateWindowController() {
             if let window = controller.window {
                 if unifiedTitleAndToolbarCheckbox.state == NSOnState {
-                    window.styleMask.insert(NSUnifiedTitleAndToolbarWindowMask)
+                    window.styleMask.insert(NSWindowStyleMask.unifiedTitleAndToolbar)
                 } else {
-                    window.styleMask.remove(NSUnifiedTitleAndToolbarWindowMask)
+                    window.styleMask.remove(NSWindowStyleMask.unifiedTitleAndToolbar)
                 }
                 if fullContentViewCheckbox.state == NSOnState {
-                    window.styleMask.insert(NSFullSizeContentViewWindowMask)
+                    window.styleMask.insert(NSWindowStyleMask.fullSizeContentView)
                 } else {
-                    window.styleMask.remove(NSFullSizeContentViewWindowMask)
+                    window.styleMask.remove(NSWindowStyleMask.fullSizeContentView)
                 }
                 if titleBarCheckBox.state == NSOnState {
-                    window.styleMask.insert(NSTitledWindowMask)
+                    window.styleMask.insert(NSWindowStyleMask.titled)
                 } else {
-                    window.styleMask.remove(NSTitledWindowMask)
+                    window.styleMask.remove(NSWindowStyleMask.titled)
                 }
                 window.toolbar?.isVisible = showToolbarCheckbox.state == NSOnState
 
