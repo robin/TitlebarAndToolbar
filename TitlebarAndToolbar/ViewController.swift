@@ -98,7 +98,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         generateCode()
     }
     
-    @IBAction func restoreSettings(_ sender: AnyObject) {
+    func setToDefault() {
         let userDefaults = UserDefaults.standard
         if let defaultStyleMask = self.view.window?.styleMask {
             unifiedTitleAndToolbarCheckbox.state = defaultStyleMask.optionState(NSWindowStyleMask.unifiedTitleAndToolbar)
@@ -111,9 +111,36 @@ class ViewController: NSViewController, NSWindowDelegate {
         self.titleAccessoryViewCheckbox.state = NSOffState
         userDefaults.set(NSOffState, forKey: "hasTitleAccessoryView")
         titleVisibilityCheckbox.state = NSOnState
-        userDefaults.set(NSOnState, forKey: "titleVisibility")
+        userDefaults.set(titleVisibilityCheckbox.state, forKey: "titleVisibility")
         titleAppearsTransparentCheckbox.state = NSOffState
         userDefaults.set(titleAppearsTransparentCheckbox.state, forKey: "transparentTitleBar")
+    }
+    
+    @IBAction func restoreSettings(_ sender: AnyObject) {
+        guard let popUpButton = sender as? NSPopUpButton, let item = popUpButton.selectedItem else {
+            return
+        }
+        let userDefaults = UserDefaults.standard
+        if item.tag == 1 {
+            setToDefault()
+        } else if item.tag == 2 {
+            setToDefault()
+            titleVisibilityCheckbox.state = NSOffState
+            userDefaults.set(titleVisibilityCheckbox.state, forKey: "titleVisibility")
+            showToolbarCheckbox.state = NSOnState
+            userDefaults.set(showToolbarCheckbox.state, forKey:"showToolbar")
+        } else if item.tag == 3 {
+            setToDefault()
+            fullContentViewCheckbox.state = NSOnState
+            userDefaults.set(fullContentViewCheckbox.state, forKey: "fullSizeContentView")
+            titleVisibilityCheckbox.state = NSOffState
+            userDefaults.set(titleVisibilityCheckbox.state, forKey: "titleVisibility")
+            titleAppearsTransparentCheckbox.state = NSOnState
+            userDefaults.set(titleAppearsTransparentCheckbox.state, forKey: "transparentTitleBar")
+            showToolbarCheckbox.state = NSOffState
+            userDefaults.set(showToolbarCheckbox.state, forKey:"showToolbar")
+            
+        }
         generateCode()
     }
     
