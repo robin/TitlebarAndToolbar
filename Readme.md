@@ -18,7 +18,7 @@ window.titleVisibility = .visible
 ```
 
 ![window with title invisible](./images/title_hidden_window.png)
-This is a window with a toolbar while the title set to invisible:
+This is a streamlined toolbar which is a window with a toolbar while the title setting to invisible:
 
 ```swift
 window.titleVisibility = .hidden
