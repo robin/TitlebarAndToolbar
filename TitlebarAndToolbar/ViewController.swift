@@ -10,7 +10,7 @@ import Cocoa
 
 extension OptionSet {
     func optionState(_ opt: Self.Element) -> Int {
-        return self.contains(opt) ? NSOnState : NSOffState
+        return self.contains(opt) ? NSControl.StateValue.on.rawValue : NSControl.StateValue.off.rawValue
     }
 }
 
@@ -30,7 +30,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     var windowControllers = [NSWindowController]()
     
     var titleAccessoryViewEnabled : Bool {
-        return self.titleAccessoryViewCheckbox.state == NSOnState
+        return self.titleAccessoryViewCheckbox.state == NSControl.StateValue.on
     }
     
     override func viewDidLoad() {
@@ -55,35 +55,35 @@ class ViewController: NSViewController, NSWindowDelegate {
 
     func instantiateWindowController() -> NSWindowController? {
         if let storyboard = self.storyboard {
-            return storyboard.instantiateController(withIdentifier: "windowController") as? NSWindowController
+            return storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "windowController")) as? NSWindowController
         }
         return nil
     }
 
     func generateCode() {
         var code : String = ""
-        if unifiedTitleAndToolbarCheckbox.state == NSOnState {
-            code.append("window.styleMask.insert(NSWindowStyleMask.unifiedTitleAndToolbar)\n")
+        if unifiedTitleAndToolbarCheckbox.state == NSControl.StateValue.on {
+            code.append("window.styleMask.insert(NSWindow.StyleMask.unifiedTitleAndToolbar)\n")
         } else {
-            code.append("window.styleMask.remove(NSWindowStyleMask.unifiedTitleAndToolbar)\n")
+            code.append("window.styleMask.remove(NSWindow.StyleMask.unifiedTitleAndToolbar)\n")
         }
-        if fullContentViewCheckbox.state == NSOnState {
-            code.append("window.styleMask.insert(NSWindowStyleMask.fullSizeContentView)\n")
+        if fullContentViewCheckbox.state == NSControl.StateValue.on {
+            code.append("window.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)\n")
         } else {
-            code.append("window.styleMask.remove(NSWindowStyleMask.fullSizeContentView)\n")
+            code.append("window.styleMask.remove(NSWindow.StyleMask.fullSizeContentView)\n")
         }
-        if titleBarCheckBox.state == NSOnState {
-            code.append("window.styleMask.insert(NSWindowStyleMask.titled)\n")
+        if titleBarCheckBox.state == NSControl.StateValue.on {
+            code.append("window.styleMask.insert(NSWindow.StyleMask.titled)\n")
         } else {
-            code.append("window.styleMask.remove(NSWindowStyleMask.titled)\n")
+            code.append("window.styleMask.remove(NSWindow.StyleMask.titled)\n")
         }
-        let showToolbar = showToolbarCheckbox.state == NSOnState
+        let showToolbar = showToolbarCheckbox.state == NSControl.StateValue.on
         code.append("window.toolbar?.isVisible = \(showToolbar)\n")
         
-        let visibility = titleVisibilityCheckbox.state == NSOffState ? ".hidden" : ".visible"
+        let visibility = titleVisibilityCheckbox.state == NSControl.StateValue.off ? ".hidden" : ".visible"
         code.append("window.titleVisibility = \(visibility)\n")
         
-        let transparent = titleAppearsTransparentCheckbox.state == NSOnState
+        let transparent = titleAppearsTransparentCheckbox.state == NSControl.StateValue.on
         code.append("window.titlebarAppearsTransparent = \(transparent)\n")
         self.codeTextView.string = code
     }
@@ -101,18 +101,18 @@ class ViewController: NSViewController, NSWindowDelegate {
     func setToDefault() {
         let userDefaults = UserDefaults.standard
         if let defaultStyleMask = self.view.window?.styleMask {
-            unifiedTitleAndToolbarCheckbox.state = defaultStyleMask.optionState(NSWindowStyleMask.unifiedTitleAndToolbar)
+            unifiedTitleAndToolbarCheckbox.state = NSControl.StateValue(rawValue: defaultStyleMask.optionState(NSWindow.StyleMask.unifiedTitleAndToolbar))
             userDefaults.set(unifiedTitleAndToolbarCheckbox.state, forKey: "unifiedTitleAndToolbar")
-            fullContentViewCheckbox.state = defaultStyleMask.optionState(NSWindowStyleMask.fullSizeContentView)
+            fullContentViewCheckbox.state = NSControl.StateValue(rawValue: defaultStyleMask.optionState(NSWindow.StyleMask.fullSizeContentView))
             userDefaults.set(fullContentViewCheckbox.state, forKey: "fullSizeContentView")
-            titleBarCheckBox.state = defaultStyleMask.optionState(NSWindowStyleMask.titled)
+            titleBarCheckBox.state = NSControl.StateValue(rawValue: defaultStyleMask.optionState(NSWindow.StyleMask.titled))
             userDefaults.set(titleBarCheckBox.state, forKey: "titleBar")
         }
-        self.titleAccessoryViewCheckbox.state = NSOffState
-        userDefaults.set(NSOffState, forKey: "hasTitleAccessoryView")
-        titleVisibilityCheckbox.state = NSOnState
+        self.titleAccessoryViewCheckbox.state = NSControl.StateValue.off
+        userDefaults.set(NSControl.StateValue.off, forKey: "hasTitleAccessoryView")
+        titleVisibilityCheckbox.state = NSControl.StateValue.on
         userDefaults.set(titleVisibilityCheckbox.state, forKey: "titleVisibility")
-        titleAppearsTransparentCheckbox.state = NSOffState
+        titleAppearsTransparentCheckbox.state = NSControl.StateValue.off
         userDefaults.set(titleAppearsTransparentCheckbox.state, forKey: "transparentTitleBar")
     }
     
@@ -125,19 +125,19 @@ class ViewController: NSViewController, NSWindowDelegate {
             setToDefault()
         } else if item.tag == 2 {
             setToDefault()
-            titleVisibilityCheckbox.state = NSOffState
+            titleVisibilityCheckbox.state = NSControl.StateValue.off
             userDefaults.set(titleVisibilityCheckbox.state, forKey: "titleVisibility")
-            showToolbarCheckbox.state = NSOnState
+            showToolbarCheckbox.state = NSControl.StateValue.on
             userDefaults.set(showToolbarCheckbox.state, forKey:"showToolbar")
         } else if item.tag == 3 {
             setToDefault()
-            fullContentViewCheckbox.state = NSOnState
+            fullContentViewCheckbox.state = NSControl.StateValue.on
             userDefaults.set(fullContentViewCheckbox.state, forKey: "fullSizeContentView")
-            titleVisibilityCheckbox.state = NSOffState
+            titleVisibilityCheckbox.state = NSControl.StateValue.off
             userDefaults.set(titleVisibilityCheckbox.state, forKey: "titleVisibility")
-            titleAppearsTransparentCheckbox.state = NSOnState
+            titleAppearsTransparentCheckbox.state = NSControl.StateValue.on
             userDefaults.set(titleAppearsTransparentCheckbox.state, forKey: "transparentTitleBar")
-            showToolbarCheckbox.state = NSOffState
+            showToolbarCheckbox.state = NSControl.StateValue.off
             userDefaults.set(showToolbarCheckbox.state, forKey:"showToolbar")
             
         }
@@ -147,27 +147,27 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBAction func launchWindow(_ sender: AnyObject) {
         if let controller = instantiateWindowController() {
             if let window = controller.window {
-                if unifiedTitleAndToolbarCheckbox.state == NSOnState {
-                    window.styleMask.insert(NSWindowStyleMask.unifiedTitleAndToolbar)
+                if unifiedTitleAndToolbarCheckbox.state == NSControl.StateValue.on {
+                    window.styleMask.insert(NSWindow.StyleMask.unifiedTitleAndToolbar)
                 } else {
-                    window.styleMask.remove(NSWindowStyleMask.unifiedTitleAndToolbar)
+                    window.styleMask.remove(NSWindow.StyleMask.unifiedTitleAndToolbar)
                 }
-                if fullContentViewCheckbox.state == NSOnState {
-                    window.styleMask.insert(NSWindowStyleMask.fullSizeContentView)
+                if fullContentViewCheckbox.state == NSControl.StateValue.on {
+                    window.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)
                 } else {
-                    window.styleMask.remove(NSWindowStyleMask.fullSizeContentView)
+                    window.styleMask.remove(NSWindow.StyleMask.fullSizeContentView)
                 }
-                if titleBarCheckBox.state == NSOnState {
-                    window.styleMask.insert(NSWindowStyleMask.titled)
+                if titleBarCheckBox.state == NSControl.StateValue.on {
+                    window.styleMask.insert(NSWindow.StyleMask.titled)
                 } else {
-                    window.styleMask.remove(NSWindowStyleMask.titled)
+                    window.styleMask.remove(NSWindow.StyleMask.titled)
                 }
-                window.toolbar?.isVisible = showToolbarCheckbox.state == NSOnState
+                window.toolbar?.isVisible = showToolbarCheckbox.state == NSControl.StateValue.on
 
                 showWindowWithTitle(controller, title: "Window")
 
                 if titleAccessoryViewEnabled {
-                    if let titlebarController = self.storyboard?.instantiateController(withIdentifier: "titlebarViewController") as? NSTitlebarAccessoryViewController {
+                    if let titlebarController = self.storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "titlebarViewController")) as? NSTitlebarAccessoryViewController {
                         switch self.titleAccessoryViewLayoutMatrix.selectedRow {
                         case 0:
                             titlebarController.layoutAttribute = .bottom
@@ -183,8 +183,8 @@ class ViewController: NSViewController, NSWindowDelegate {
                         window.addTitlebarAccessoryViewController(titlebarController)
                     }
                 }
-                window.titleVisibility = titleVisibilityCheckbox.state == NSOffState ? .hidden : .visible
-                window.titlebarAppearsTransparent = titleAppearsTransparentCheckbox.state == NSOnState
+                window.titleVisibility = titleVisibilityCheckbox.state == NSControl.StateValue.off ? .hidden : .visible
+                window.titlebarAppearsTransparent = titleAppearsTransparentCheckbox.state == NSControl.StateValue.on
             }
         }
     }
