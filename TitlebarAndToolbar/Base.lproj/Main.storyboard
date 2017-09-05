@@ -742,6 +742,7 @@
                             <constraint firstItem="lYi-KY-G2F" firstAttribute="top" secondItem="p7z-Pf-rCk" secondAttribute="bottom" constant="8" id="HEo-Jx-8Pm"/>
                             <constraint firstAttribute="bottom" secondItem="fg3-Ac-nDb" secondAttribute="bottom" constant="20" id="c5d-1e-duA"/>
                             <constraint firstItem="fg3-Ac-nDb" firstAttribute="leading" secondItem="kaG-WO-9Uu" secondAttribute="leading" constant="20" id="dnG-0A-hHJ"/>
+                            <constraint firstItem="jFa-f7-fax" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lYi-KY-G2F" secondAttribute="trailing" constant="8" symbolic="YES" id="dsu-H7-zPk"/>
                             <constraint firstAttribute="trailing" secondItem="jFa-f7-fax" secondAttribute="trailing" constant="20" id="e3j-WX-mnU"/>
                             <constraint firstItem="lYi-KY-G2F" firstAttribute="leading" secondItem="kaG-WO-9Uu" secondAttribute="leading" constant="50" id="nAV-cU-6LQ"/>
                             <constraint firstItem="fg3-Ac-nDb" firstAttribute="top" secondItem="lYi-KY-G2F" secondAttribute="bottom" constant="8" id="s8l-rN-JjE"/>
@@ -832,6 +833,7 @@
                             <constraint firstItem="oCg-OP-O6G" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" placeholder="YES" id="RH5-qq-dVL"/>
                             <constraint firstAttribute="bottom" secondItem="CKH-Ed-1fw" secondAttribute="bottom" id="SNj-Df-zrc"/>
                             <constraint firstItem="CKH-Ed-1fw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="YlQ-BL-FQQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LQO-9y-ngD" secondAttribute="trailing" constant="20" symbolic="YES" id="bG9-lX-yNx"/>
                             <constraint firstItem="LQO-9y-ngD" firstAttribute="leading" secondItem="oCg-OP-O6G" secondAttribute="trailing" constant="8" id="j3S-Rd-ktH"/>
                             <constraint firstItem="CKH-Ed-1fw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="oIq-eZ-Gkf"/>
                             <constraint firstAttribute="trailing" secondItem="CKH-Ed-1fw" secondAttribute="trailing" id="vuT-86-3H9"/>
