@@ -1,7 +1,7 @@
 # Title bar and Toolbar of NSWindow examples
 
 [![Platform](http://img.shields.io/badge/platform-macOS-red.svg?style=flat)](https://developer.apple.com/macos/)
-[![Swift 3](https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 [![Twitter](https://img.shields.io/badge/twitter-@robinlu-blue.svg?style=flat)](http://twitter.com/robinlu)
 
@@ -26,9 +26,9 @@ window.titleVisibility = .hidden
 Example applications: Calendar, Notes, Xcode
 
 ## Full size content view
-When setting the NSWindowStyleMask.fullSizeContentView, the content view extends to the whole window. The title bar and toolbar use a blur effect if visible.
+When setting the NSWindow.StyleMask.fullSizeContentView, the content view extends to the whole window. The title bar and toolbar use a blur effect if visible.
 ```swift
-window.styleMask.insert(NSWindowStyleMask.fullSizeContentView)
+window.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)
 ```
 
 When both title and toolbar are visible:
@@ -48,7 +48,7 @@ You may want to hide the title and use full size content view to get the followi
 ```swift
 window.titlebarAppearsTransparent = true
 window.titleVisibility = .hidden
-window.styleMask.insert(NSWindowStyleMask.fullSizeContentView)
+window.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)
 ```
 ![transparent titlebar](./images/transparent_title.png)
 Example application: Reeder, 
