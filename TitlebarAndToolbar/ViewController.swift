@@ -29,7 +29,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     
     var windowControllers = [NSWindowController]()
     
-    @objc var titleAccessoryViewEnabled : Bool {
+    @objc dynamic var titleAccessoryViewEnabled : Bool {
         return self.titleAccessoryViewCheckbox.state == NSControl.StateValue.on
     }
     
